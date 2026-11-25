@@ -1,0 +1,99 @@
+:root {
+  --bg: #0f1117;
+  --panel: #171a23;
+  --line: #262a36;
+  --text: #e6e8ef;
+  --muted: #9aa1b2;
+  --accent: #7aa2f7;
+  --accent-ink: #0f1117;
+  --ok: #9ece6a;
+  --radius: 12px;
+  --max: 1080px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+a { color: var(--accent); }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+/* header */
+header.site { border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
+.brand { color: var(--text); text-decoration: none; font-weight: 700; font-size: 18px; letter-spacing: .2px; }
+.brand span { color: var(--accent); }
+nav.top { display: flex; gap: 20px; flex-wrap: wrap; }
+nav.top a { color: var(--muted); text-decoration: none; font-size: 15px; }
+nav.top a:hover { color: var(--text); }
+
+/* hero */
+.hero { padding: 80px 20px 56px; }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.1; margin: 0 0 16px; max-width: 16ch; }
+.hero p.lead { color: var(--muted); font-size: 19px; max-width: 60ch; margin: 0 0 28px; }
+.code { font-family: ui-monospace, "JetBrains Mono", Menlo, Consolas, monospace; }
+
+.btn {
+  display: inline-block; border: 0; cursor: pointer;
+  background: var(--accent); color: var(--accent-ink);
+  padding: 11px 18px; border-radius: 8px; font-weight: 600; font-size: 15px;
+  text-decoration: none; font-family: inherit;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--text); border: 1px solid var(--line); }
+
+section { padding: 56px 0; border-top: 1px solid var(--line); }
+section h2 { font-size: 30px; margin: 0 0 8px; }
+section p.sub { color: var(--muted); margin: 0 0 32px; max-width: 65ch; }
+
+/* steps */
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.step { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.step b { display: block; margin-bottom: 6px; }
+.step p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* pricing */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.card {
+  background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; display: flex; flex-direction: column;
+}
+.card.featured { border-color: var(--accent); }
+.card .tag { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); font-weight: 700; min-height: 18px; }
+.card h3 { margin: 6px 0 4px; font-size: 20px; }
+.card .desc { color: var(--muted); font-size: 15px; margin: 0 0 16px; }
+.price { font-size: 34px; font-weight: 700; margin: 0; }
+.price small { font-size: 14px; color: var(--muted); font-weight: 400; }
+.card ul { list-style: none; padding: 0; margin: 16px 0 24px; font-size: 15px; flex: 1; }
+.card li { padding: 5px 0 5px 24px; position: relative; }
+.card li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+.card .btn { text-align: center; }
+.note { color: var(--muted); font-size: 14px; margin-top: 20px; }
+
+/* faq */
+details { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 10px; }
+summary { cursor: pointer; font-weight: 600; }
+details p { color: var(--muted); margin: 10px 0 0; }
+
+/* legal pages */
+.legal { padding: 56px 0 72px; max-width: 760px; }
+.legal h1 { font-size: 36px; margin: 0 0 4px; }
+.legal .updated { color: var(--muted); margin: 0 0 32px; }
+.legal h2 { font-size: 21px; margin: 32px 0 8px; }
+.legal p, .legal li { color: #cfd3de; }
+
+/* footer */
+footer.site { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
+footer.site .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+footer.site nav { display: flex; gap: 18px; flex-wrap: wrap; }
+footer.site a { color: var(--muted); }
+footer.site a:hover { color: var(--text); }
+
+@media (max-width: 720px) {
+  header.site .wrap { height: auto; flex-direction: column; align-items: flex-start; padding-top: 14px; padding-bottom: 14px; gap: 8px; }
+  nav.top { gap: 6px 16px; }
+  .hero { padding-top: 48px; }
+}
