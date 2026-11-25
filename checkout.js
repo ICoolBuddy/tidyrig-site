@@ -8,7 +8,7 @@ const PADDLE = {
   prices: { terminal: "", power: "", hyprland: "", bundle: "" },
 };
 
-const SUPPORT_EMAIL = "[EMAIL]";
+const SUPPORT_EMAIL = "support@darkify.xyz";
 
 function fallback(kit) {
   location.href = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent("Order: " + kit + " kit")}`;
